@@ -1,0 +1,310 @@
+body {
+  background: #0c0a0f;
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #0c0a0f inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #e3d7f4;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #0c0a0f inset;/*your box-shadow*/
+    -webkit-text-fill-color: #e3d7f4;
+}
+
+#wrapper {
+  margin: 2rem 2rem;
+  max-width:100%;
+}
+
+#outerSearchWrapper {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#innerSearchWrapper {
+  margin-top: 15%;
+}
+
+#searchAgainWrapper {
+  margin: 0 auto;
+  width: 340px;
+}
+
+#searchAgain {
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing:.1rem;
+    color: #e3d7f4;
+    text-align:center;
+}
+
+#searchAgain:hover {
+  letter-spacing:.3rem;
+  transition: all .5s ease;
+}
+
+#imagesWrapper {
+  margin: 0 auto;
+  max-width: 1640px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#formWrapper {
+  max-width:480px;
+  margin: 0 auto;
+}
+
+#form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+#textnAmount {
+ margin: 0.5rem;
+ display: flex;
+ width: 100%;
+}
+
+#search-text {
+  margin: 0.5rem 0;
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #e3d7f4;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #e3d7f4;
+  padding: 7px 0;
+  background: transparent;
+}
+
+#amount {
+  margin: 0.5rem;
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid #e3d7f4;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #e3d7f4;
+  padding: 7px 0;
+  background: transparent;
+  flex-basis: 15%;
+  width: 100%;
+}
+
+#imgnSort {
+  width: 100%;
+  display:flex;
+  flex-wrap: nowrap;
+}
+
+#imageSize {
+  color: #e3d7f4;
+  margin: 1rem 0;
+}
+
+#imageSize input {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+#imageSize label {
+    color: #e3d7f4;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+#imageSize label:hover {
+  color: #0c0a0f;
+  background-color: #e3d7f4;
+}
+
+#imageSize input:checked + label {
+  color: #0c0a0f;
+  background-color: #e3d7f4;
+}
+
+#sortSelect {
+  background-color: #e3d7f4;
+  margin: 0.5rem;
+  margin-left: auto;
+}
+
+select#sortBy {
+  padding: .5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#search {
+  width:100%;
+  margin: 0.5rem;
+}
+
+#search-button {
+  width: 100%;
+}
+
+button#search-button {
+  font-size: 3rem;
+}
+
+#search-button:hover {
+  letter-spacing:.3rem;
+  transition: all .5s ease;
+}
+
+#images {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#images img.small {
+  margin: 1rem;
+  max-width: 240px;
+  border: 1rem solid #e3d7f4;;
+}
+
+#images img.medium {
+  margin: 2rem;
+  max-width: 360px;
+  border: 2rem solid #e3d7f4;;
+}
+
+#images img.large {
+  margin: 3rem;
+  max-width: 560px;
+  border: 3rem solid #e3d7f4;
+}
+
+
+#loading {
+  color: #e3d7f4;
+  font-size: 2rem;
+  margin: 2rem 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#displaying {
+  color: #e3d7f4;
+  text-align:center;
+}
+
+#pagination {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+}
+
+button {
+  background: none;
+  color: #e3d7f4;
+  border: none;
+  font: inherit;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#pagination button{
+  font-size: 1.5rem;
+}
+
+button:hover {
+  color: #0c0a0f;
+  background-color: #e3d7f4;
+}
+
+button:focus {
+  background: none;
+  color: #e3d7f4;
+}
+
+#btnBack {
+  margin: 0.5rem;
+}
+
+#pag {
+  background-color: #e3d7f4;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#btnForward {
+  margin: 0.5rem;
+}
+
+#resetBtn, #reloadLastBtn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: #0c0a0f;
+  background-color: #e3d7f4;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+#resetBtn:hover, #reloadLastBtn:hover {
+  background-color: transparent;
+  color: #e3d7f4;
+  font-size: 3rem;
+  transition: font-size .5s ease, background-color .2s ease;
+}
+
+#reloadLastBtn:focus {
+  transform: rotate(-180deg);
+  transition: transform .1s ease;
+}
+
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: #0c0a0f;
+  background-color: #e3d7f4;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+#toTop:hover {
+  background-color: transparent;
+  color: #e3d7f4;
+  font-size: 3rem;
+  transition: font-size .1s ease;
+}
+
+#error-message {
+  color: #e3d7f4;
+  font-size: 2rem;
+  text-align: center;
+}

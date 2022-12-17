@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>flickrSearch</title>
+    <script src="lib/typewriter.js" defer></script> <!--typewriterjs used for (Loading...) animation-->
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="searchAgainWrapper">
+      </div>
+      <div id="outerSearchWrapper">
+        <div id="innerSearchWrapper">
+        <p id="error-message"></p>
+        <div id="formWrapper">
+          <form id="form">
+            <div id="textnAmount">
+              <input type="text" id="search-text" name="search-text" placeholder="Search... (E.g. 'cat')" required/>
+              <input type="number" id="amount" name="amount" value="15" min="1" max="500" required><br>
+            </div>
+            <div id="imgnSort">
+            <div id="imageSize">
+              <input type="radio" id="small" name="image_size" value="w">
+              <label for="small">small</label>
+              <input type="radio" id="medium" name="image_size" value="z" checked="checked">
+              <label for="medium">medium</label>
+              <input type="radio" id="large" name="image_size" value="b">
+              <label for="large">large</label>
+            </div>
+            <div id="sortSelect">
+              <select id="sortBy" name="sortBy">
+                <option value="date">date</option>
+                <option value="relevance" selected>relevance</option>
+                <option value="interestingness">interestingness</option>
+              </select>
+            </div>
+          </div>
+            <div id="search">
+              <button id="search-button" type="submit">flickrSearch</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      <h2 id="displaying"></h2>
+      <div id="imagesWrapper">
+        <div id="images">
+        </div>
+      </div>
+      <div id="pagination">
+      </div>
+      <button id="toTop">^</button>
+    </div>
+  </body>
+</html>
