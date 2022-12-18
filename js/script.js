@@ -296,6 +296,10 @@ function flickrAPI(searchData){
         }
         else if(response === undefined || response.length == 0 || response.photos.photo.length <= 0){ //response when no images found with & without &page= arg
           resetSearch(2);
+          if(currentSearchData.length > 0){
+            let resetsData = [2, searchData]
+            createResets(resetsData);
+          }
           throw new Error("no images found, please try another search term.");
         }
         //if is array & there is photo data, return data
@@ -336,7 +340,6 @@ function serveImages(data){
     img.src = imageURI; //add img src to element
     img.className = imageSize; //set className to imageSize for size specific styling
     img.addEventListener('click', function(event){
-      console.log("uplarging");
       img.style.maxWidth = 'none';
       img.scrollIntoView();
     }, {once: true});
