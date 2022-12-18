@@ -299,8 +299,10 @@ function flickrAPI(searchData){
           if(currentSearchData.length > 0){
             let resetsData = [2, searchData]
             createResets(resetsData);
-          }
+            throw new Error("no more images found, reload last results or search again.");
+          }else {
           throw new Error("no images found, please try another search term.");
+          }
         }
         //if is array & there is photo data, return data
         else if(Array.isArray(response.photos.photo) && response.photos.photo != null){
