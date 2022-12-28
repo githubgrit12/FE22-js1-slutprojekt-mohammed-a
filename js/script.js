@@ -17,12 +17,9 @@ const uriSuffix = ".jpg"
 const apiKey = "7f27f84ea9e7c12c99be353ae3f7b6af";
 const flickrBase = "https://www.flickr.com/services/rest/?";
 const apiMethod = "flickr.photos.search"; //apiMethod to use,
-const keyArg = "api_key="+apiKey;
-const formatArg = "format=json&nojsoncallback=1";
 let currentSearchData = []; //save current search data in this array
 let local; //used to check if data requested from flickrAPI or loaded from currentSearchData array
 //declare symbols for cleaner code
-const and = "&";
 const divider = "/";
 const underscore = "_";
 //add eventListeners to formSubmit
@@ -263,28 +260,23 @@ function search(event){
 //function to call flickrAPI then pass response
 function flickrAPI(searchData){
   local = false; //grabbing data from flickrAPI
-  let page = searchData.page;
-  let methodArg = "method="+searchData.apiMethod;
-  let searchArg = "text="+searchData.searchText;
-  let amountArg = "per_page="+ searchData.searchAmount;
-  let sortArg = "sort="+searchData.sortBy;
-  let pageArg = "page="+page;
-  let sizeArg = searchData.imageSize;
-  //build request URL
-  const requestURI = flickrBase
-  + methodArg + and
-  + keyArg + and
-  + searchArg + and
-  + amountArg + and
-  + sortArg + and
-  + pageArg + and
-  + formatArg;
-  //fetch API request
-  fetch(requestURI).then(
+  let {searchText, searchAmount, imageSize, sortBy, page, apiMethod} = searchData; //unpack searchData
+  const params = new URLSearchParams({
+  method: 'flickr.photos.search',
+  api_key: apiKey,
+  text: searchText,
+  per_page: searchAmount,
+  sort: sortBy,
+  page: page,
+  format: 'json',
+  nojsoncallback: 1
+  });
+  fetch(flickrBase+params)
+  .then(
       function(response){
         return response.json();
-      }
-  ).then( //process response
+    })
+  .then( //process response
       function(response){
         if(response.message != null){ //.message in response on error
           resetSearch(2);
