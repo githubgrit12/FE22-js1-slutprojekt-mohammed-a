@@ -394,23 +394,23 @@ function handleError(error){
   if(searchAgain != null){
     document.querySelector('#searchAgain').innerText= 'flickrSearch'; //skip ani on error
   }
-    const errorP = document.querySelector('#error-message');
+  resetSearch(2);
     if(typeof error == "undefined"){
-      errorP.innerText = "error undefined"; //if error undefined
+      errEl.innerText = "error undefined"; //if error undefined
     }
     else if(typeof error == "string"){
       if(error.includes("Invalid API Key")){ //if apiKey invalid
-        errorP.innerText = "Invalid API Key, contact developer or download script and edit 'js/script.js' apiKey variable and run locally.";
+        errEl.innerText = "Invalid API Key, contact developer or download script and edit 'js/script.js' apiKey variable and run locally.";
       }
     }else if(typeof error != "string"){
       errorString = error.toString();
       if(errorString.includes("Failed to fetch")){ //if connectivity issues to flickr server
-        errorP.innerText  = "Could not load flickrAPI to fetch images.";
+        errEl.innerText  = "Could not load flickrAPI to fetch images, please check your connection & try again.";
       } else { //if not string but not failed to fetch, display error message
-        errorP.innerText  = errorString;
+        errEl.innerText  = errorString;
       }
     }
     else{ //all else, display error message
-      errorP.innerText  = error;
+      errEl.innerText  = error;
     }
 }
